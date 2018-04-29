@@ -1,0 +1,18 @@
+<div *ngIf="currentQuestion < 0">
+  <h1>Welcome to Test</h1>
+  <button class="btn btn-primary" (click)="start()">Start the Quiz</button>
+</div>
+<div *ngFor="let question of questions; let i = index">
+  <div *ngIf="i == currentQuestion">
+    <h3>Qestion {{i + 1}}: {{question.question}}</h3>
+    <div *ngIf="i == currentQuestion">
+      <div *ngFor="let op of question.options; let j = index">
+        <input type="radio" name="{{i}}" (click)="selectOp(j)"> {{op}}
+      </div>
+    </div>
+  </div>
+</div>
+<button *ngIf="selectedOption != null" class="btn btn-primary" (click)="next()">Submit</button>
+<div *ngIf="currentQuestion == questions.length">
+  <h3>Your Score: {{score}}</h3>
+</div>
