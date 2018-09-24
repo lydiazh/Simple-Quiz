@@ -34,7 +34,7 @@ module.exports = module.exports.toString();
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"currentQuestion < 0\">\n  <h1>Welcome to Test</h1>\n  <button class=\"btn btn-primary\" (click)=\"start()\">Start the Quiz</button>\n</div>\n<div *ngFor=\"let question of questions; let i = index\">\n  <div *ngIf=\"i == currentQuestion\">\n    <h3>Qestion {{i + 1}}: {{question.question}}</h3>\n    <div *ngIf=\"i == currentQuestion\">\n      <div *ngFor=\"let op of question.options; let j = index\">\n        <input type=\"radio\" name=\"{{i}}\" (click)=\"selectOp(j)\"> {{op}}\n      </div>\n    </div>\n  </div>\n</div>\n<button *ngIf=\"selectedOption != null\" class=\"btn btn-primary\" (click)=\"next()\">Submit</button>\n<div *ngIf=\"currentQuestion == questions.length\">\n  <h3>Your Score: {{score}}</h3>\n</div>\n"
+module.exports = "<div *ngIf=\"currentQuestion < 0\">\r\n  <h1>Welcome to Test</h1>\r\n  <button class=\"btn btn-primary\" (click)=\"start()\">Start the Quiz</button>\r\n</div>\r\n<div *ngFor=\"let question of questions; let i = index\">\r\n  <div *ngIf=\"i == currentQuestion\">\r\n    <h3>Qestion {{i + 1}}: {{question.question}}</h3>\r\n    <div *ngIf=\"i == currentQuestion\">\r\n      <div *ngFor=\"let op of question.options; let j = index\">\r\n        <input type=\"radio\" name=\"{{i}}\" (click)=\"selectOp(j)\"> {{op}}\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n<button *ngIf=\"selectedOption != null\" class=\"btn btn-primary\" (click)=\"next()\">Submit</button>\r\n<div *ngIf=\"currentQuestion == questions.length\">\r\n  <h3>Your Score: {{score}}</h3>\r\n</div>\r\n"
 
 /***/ }),
 
